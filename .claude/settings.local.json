@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node \"c:\\\\Users\\\\Kayky\\\\Desktop\\\\uau-projeto\\\\verify-detail.mjs\")",
+      "PowerShell(\"cleaned\")",
+      "PowerShell(Get-NetTCPConnection -LocalPort 5173 -State Listen -ErrorAction SilentlyContinue)",
+      "PowerShell(node \"c:\\\\Users\\\\Kayky\\\\Desktop\\\\uau-projeto\\\\verify-search.mjs\")"
+    ]
+  }
+}
