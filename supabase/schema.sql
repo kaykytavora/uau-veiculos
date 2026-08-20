@@ -285,4 +285,10 @@ create policy "autenticados atualizam contatos"
   to authenticated
   using (true)
   with check (true);
- 
+
+-- "Remover da lista" no painel de Contatos apaga o lead permanentemente.
+drop policy if exists "autenticados removem contatos" on public.contatos;
+create policy "autenticados removem contatos"
+  on public.contatos for delete
+  to authenticated
+  using (true);

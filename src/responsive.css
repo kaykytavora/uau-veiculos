@@ -1,0 +1,141 @@
+/* ============================================================
+   RESPONSIVE LAYOUT
+   The app is built with inline styles (desktop-first grids), so every
+   override here needs !important to win over the inline style prop.
+   ============================================================ */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+#root {
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+}
+
+/* ---- header: swap desktop nav for the hamburger + dropdown ---- */
+@media (max-width: 900px) {
+  .uau-desktop-nav {
+    display: none !important;
+  }
+  .uau-mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
+@media (min-width: 901px) {
+  .uau-mobile-menu {
+    display: none !important;
+  }
+}
+
+/* ---- generic grids used across public + admin pages ---- */
+@media (max-width: 1024px) {
+  .uau-grid-4,
+  .uau-grid-5,
+  .uau-form-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 900px) {
+  .uau-grid-3,
+  .uau-form-grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .uau-footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px !important;
+  }
+  .uau-estoque-grid,
+  .uau-contato-hero,
+  .uau-contato-grid,
+  .uau-detail-grid,
+  .uau-sell-grid,
+  .uau-preco-grid,
+  .uau-resumo-grid,
+  .uau-gasto-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .uau-admin-shell {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 640px) {
+  .uau-grid-2,
+  .uau-grid-3,
+  .uau-grid-4,
+  .uau-grid-5,
+  .uau-form-grid-3,
+  .uau-form-grid-4,
+  .uau-contato-cards,
+  .uau-footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .uau-search-grid {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .uau-search-grid > button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---- admin shell: sidebar becomes a horizontal-scroll top bar ---- */
+@media (max-width: 900px) {
+  .uau-admin-shell > aside {
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 10px 12px !important;
+    overflow-x: auto;
+    gap: 4px;
+  }
+  .uau-admin-shell > aside > div:first-child {
+    padding: 0 10px 0 0 !important;
+  }
+  .uau-admin-shell > aside > nav {
+    flex-direction: row !important;
+    flex: none !important;
+  }
+  .uau-admin-shell > aside > nav button {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 10px !important;
+    font-size: 12.5px !important;
+  }
+  .uau-admin-shell > aside > button {
+    flex-shrink: 0;
+    padding: 8px 10px !important;
+    white-space: nowrap;
+  }
+  .uau-admin-shell > main {
+    padding: 16px !important;
+  }
+}
+
+/* ---- background-photo banners: shrink so the subject isn't cropped away ---- */
+@media (max-width: 640px) {
+  .uau-hero-banner {
+    min-height: 380px !important;
+  }
+  .uau-hero-banner-content,
+  .uau-sobre-banner-content,
+  .uau-cta-banner-content {
+    padding: 28px 20px !important;
+  }
+  .uau-sobre-banner {
+    min-height: 320px !important;
+  }
+}
+@media (max-width: 480px) {
+  .uau-hero-banner {
+    min-height: 320px !important;
+  }
+  .uau-sobre-banner {
+    min-height: 280px !important;
+  }
+}
